@@ -23,11 +23,11 @@
 				<hgroup class="header_inner_wrap">
 					<h1 class="header_toplogo"><a href="#" class="header_toplogo_link"><span class="hdtext">PREMIER BLUE</span></a></h1>
 					<div class="header_util_list_wrap">
+						<p class="header_util_men">김블루님</p>
 						<ul class="header_util_list">
-							<li><a href="#" class="header_util member_layer_call">Premier Blue Members 일반 <strong>이정재 고객님(nh12345678)</strong></a></li>
+							<li><a href="#" class="header_util">고객정보</a></li>
 							<li><a href="#" class="header_util">로그아웃</a></li>
 						</ul>
-						<a href="#" class="header_util_ico member_layer_call"></a>
 					</div>
 				</hgroup>
 			</div>
@@ -38,10 +38,10 @@
 							<a href="#" class="gnb_one_item"><span class="gnb_one_text">서비스 안내</span></a>
 						</li>
 						<li name="gnb_gift">
-							<a href="#" class="gnb_one_item"><span class="gnb_one_text">기프트 신청</span></a>
+							<a href="#" class="gnb_one_item"><span class="gnb_one_text">프리미엄 기프트</span></a>
 						</li>
 						<li name="gnb_app">
-							<a href="#" class="gnb_one_item"><span class="gnb_one_text">기프트 신청내역</span></a>
+							<a href="#" class="gnb_one_item"><span class="gnb_one_text">기프트 신청 및 조회</span></a>
 						</li>
 						<li name="gnb_customer">
 							<a href="#" class="gnb_one_item"><span class="gnb_one_text">공지사항</span></a>
@@ -56,10 +56,10 @@
 				<div class="mobile_panel_dim"></div>
 				<div class="mobile_panel_wrap">
 					<div class="mbutil_row">
-						<a href="#" class="header_util_ico member_layer_call"></a>
+						<p class="mbutil_men">김블루님</p>
 						<ul class="mbutil_hlist">
+							<li><a href="#" class="mbutil">고객정보</a></li>
 							<li><a href="#" class="mbutil">로그아웃</a></li>
-							<li><a href="#" class="mbutil member_layer_call">Premier Blue Members 일반 <strong>이정재 고객님(nh12345678)</strong></a></li>
 						</ul>
 					</div>
 					<div class="mbmenu_row">
@@ -69,10 +69,10 @@
 									<a href="#" class="mbmenu_one">서비스 안내</a>
 								</li>
 								<li name="gnb_app">
-									<a href="#" class="mbmenu_one">기프트 신청</a>
+									<a href="#" class="mbmenu_one">프리미엄 기프트</a>
 								</li>
 								<li name="gnb_history">
-									<a href="#" class="mbmenu_one">기프트 신청내역</a>
+									<a href="#" class="mbmenu_one">기프트 신청 및 조회</a>
 								</li>
 								<li name="gnb_customer">
 									<a href="#" class="mbmenu_one">공지사항</a>
@@ -131,6 +131,23 @@
 				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
 			</div>
 		</div>
+		<div class="popup_wrap" id="pwModifyPopup">
+			<div class="bg_dim"></div>
+			<div class="popup_item size_2">
+				<div class="popup_title_row">
+					<h3 class="popup_title">비밀번호변경</h3>
+				</div>
+				<div class="popup_contents_row">
+					내용이 들어갑니다.
+					<div class="btn_bottom_wrap">
+						<!-- close_trigger 있을시 닫기 -->
+						<a href="#" class="btn_submit_box primary close_trigger"><span class="btn_submit_box_text">확인</span></a>
+						<a href="#" class="btn_submit_box close_trigger"><span class="btn_submit_box_text">취소</span></a>
+					</div>
+				</div>
+				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
 		<!-- // popup -->
 
 		<script>
@@ -146,13 +163,43 @@
 					},
 					closeCallback() {}
 				});
+				// 인스턴스 선언
+				let pwModifyPopup = new DesignPopup({
+					selector: "#pwModifyPopup",
+					beforeCallback() {
+
+					},
+					callback() {
+
+					},
+					closeCallback() {}
+				});
 
 				// 퍼블 확인용
 				let url = window.location.href.split('?')[1];
 				let url_2 = url !== undefined ? url.split('#')[0] : null;
 
-				if (url_2 === "member_popup") {
+				if (url_2 === "member") {
 					memberPopup.popupShow(); // show
+				}
+				if (url_2 === "pw") {
+					memberPopup.popupShow(); // show
+					pwModifyPopup.popupShow(); // show
+				}
+				if (url_2 === "pw_modal") {
+					memberPopup.popupShow(); // show
+					pwModifyPopup.popupShow(); // show
+					designModal({
+						message: "비밀번호가 변경되었습니다.",
+						modaltype: 'alert',
+						btnDisplay: false,
+						okcallback() {
+							console.log('okcallback');
+						},
+						cancelcallback() {
+							console.log('cancelcallback');
+						}
+					});
 				}
 
 				let member_layer_call = document.querySelectorAll(".member_layer_call");
@@ -168,290 +215,95 @@
 		</script>
 
 		<section class="middle_section">
-			<div class="mv_contents">
-				<div class="mv_inner_wrap">
-					<div class="mv_logo_row"><img src="./assets/images/mv_logo.png" alt=""></div>
-					<div class="mv_copy_row">
-						<p class="mv_copy">
-							<strong>Premier Blue Members</strong>는 <br>
-							최상위 고객을 선정하여 고객 한 분, 한 분의 라이프 스타일에 맞게 <br>
-							프리미엄 혜택과 서비스를 제공하는 VVIP 멤버십 서비스 입니다.
-						</p>
-					</div>
-					<div class="mv_banner_row">
-						<a href="javascript:;" class="mv_banner">
-							<div class="mv_banner_copy_wrap">
-								<div class="mv_banner_main_copy">프리미엄 기프트</div>
-								<div class="mv_banner_sub_copy">기프트 택1(연 1)</div>
-							</div>
-							<div class="mv_banner_btn_wrap">
-								<span class="mv_banner_btn">기프트 신청하기</span>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="mc_contents">
-				<div class="mc_inner_wrap">
-					<div class="customer_card_box">
-						<div class="customer_card_main">
-							<span class="cus_card_key">VIP 멤버십 고객센터</span>
-							<span class="cus_card_key2">02.517.7813</span>
-						</div>
-						<div class="customer_card_sub">
-							<p class="cus_card_summary">운영시간: 월 ~ 금 09:00 ~ 18:00 <br>(공휴일 및 주말 제외)</p>
-						</div>
-					</div>
-				</div>
-			</div>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.<br>
+			내용이 들어갑니다.
 		</section>
 		<footer class="footer_section">
 			<div class="footer_inner_wrap">
 				<div class="footer_item_wrap">
-					<div class="footer_item has_com">
+					<div class="footer_item">
 						<div class="footer_menu_list_wrap">
 							<ul class="footer_menu_list">
 								<li><a href="#" class="footer_menu">개인정보처리방침</a></li>
 								<li><a href="#" class="footer_menu">이용약관</a></li>
 							</ul>
 						</div>
-						<p class="footer_copy">COPYRIGHT(C) NH INVESTMENT & SECURITIES CO.,LTD.ALL RIGHTS RESERVED.</p>
-					</div>
-					<div class="footer_item has_cus">
-						<div class="footer_else_key">VIP멤버십 고객센터</div>
-						<div class="footer_else_value">
-							<ul class="footer_guide_list">
-								<li>TEL<br>02-517-7813</li>
-								<li class="long">평일 09:00 ~ 18:00 <br>주말 및 공휴일 휴무</li>
-							</ul>
+						<div class="footer_copy_wrap">
+							<p class="footer_copy emp">Premier Blue Members 컨시어지센터 02-517-7813</p>
+							<p class="footer_copy">운영시간 | 09:00-18:00 (주말 및 공휴일 제외) E-Mail | premierblue-vip@gmail.com</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</footer>
 
-		<!-- survey -->
-		<div class="survey_document_wrap">
-			<div class="survey_swiper_zone">
-				<div class="swiper-container survey">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="survey_gate_wrap">
-								<div class="survey_gate_top">
-									<div class="survey_gate_title_wrap">
-										<p class="survey_gate_title_main">NH투자증권</p>
-										<p class="survey_gate_title_sub">Premier Blue Members</p>
-									</div>
-									<p class="survey_gate_docu_title">만족도조사</p>
-								</div>
-								<div class="survey_gate_bottom">
-									<span class="survey_bottom_logo"><img src="./assets/images/survey/survey_logo.png" alt=""></span>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="survey_docu_wrap">
-								<div class="survey_title_row">
-									<p class="survey_title_main"><span class="survey_title_bullet">01</span><span class="survey_title_liquid">수령 확인</span></p>
-									<p class="survey_title_sub">
-										<strong>NH투자증권 Premier Blue Members</strong>
-										기프트(바우처)는 이상 없이 잘 받으셨는지요?
-									</p>
-								</div>
-								<div class="survey_form_row">
-									<ul class="survey_form_list">
-										<li><button class="props_button">1. 네</button></li>
-										<li><button class="props_button">2. 아니요</button></li>
-										<li class="has_ta"><textarea rows="10" cols="10" class="survey_ta" placeholder="의견 :"></textarea></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="survey_docu_wrap">
-								<div class="survey_title_row">
-									<p class="survey_title_main"><span class="survey_title_bullet">02</span><span class="survey_title_liquid">기프트 만족도</span></p>
-									<p class="survey_title_sub">
-										고객님께서 받으신 <br>
-										기프트(바우처)는 어떠셨는지요?
-									</p>
-								</div>
-								<div class="survey_form_row">
-									<ul class="survey_form_list">
-										<li><button class="props_button">1. 만족</button></li>
-										<li><button class="props_button">2. 보통</button></li>
-										<li><button class="props_button">3. 불만족</button></li>
-										<li class="has_ta"><textarea rows="10" cols="10" class="survey_ta" placeholder="의견 :"></textarea></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="survey_docu_wrap">
-								<div class="survey_title_row">
-									<p class="survey_title_main"><span class="survey_title_bullet">03</span><span class="survey_title_liquid">기프트 선호도</span></p>
-									<p class="survey_title_sub">
-										향후 희망하거나 새롭게 추가되었으면 하는 카테고리를 선택해주세요. (중복선택 가능)
-									</p>
-								</div>
-								<div class="survey_form_row">
-									<ul class="survey_form_list">
-										<li>
-											<ul class="props_item_list">
-												<li><button class="props_button">다이닝</button></li>
-												<li><button class="props_button">호텔</button></li>
-												<li><button class="props_button">한우</button></li>
-												<li><button class="props_button">뷰티</button></li>
-												<li><button class="props_button">골프</button></li>
-												<li><button class="props_button">건강검진</button></li>
-												<li><button class="props_button">와인</button></li>
-												<li><button class="props_button">가전</button></li>
-												<li><button class="props_button">식품</button></li>
-												<li><button class="props_button">클래스</button></li>
-												<li><button class="props_button">캠핑</button></li>
-												<li><button class="props_button">리빙</button></li>
-												<li><button class="props_button">레저</button></li>
-												<li><button class="props_button">기타</button></li>
-											</ul>
-										</li>
-										<li class="has_ta"><textarea rows="10" cols="10" class="survey_ta" placeholder="의견 :"></textarea></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="survey_docu_wrap">
-								<div class="survey_title_row">
-									<p class="survey_title_main"><span class="survey_title_bullet">04</span><span class="survey_title_liquid">향후 받고싶은 기프트가 있으면 말씀해 주세요.</span></p>
-								</div>
-								<div class="survey_form_row">
-									<ul class="survey_form_list">
-										<li class="has_ta"><textarea rows="10" cols="10" class="survey_ta" placeholder="의견 :"></textarea></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="survey_docu_wrap type2">
-								<div class="survey_docu_inner">
-									<p class="survey_docu_message">소중한 의견<br>감사합니다.</p>
-								</div>
-								<div class="survey_docu_btn_row">
-									<a href="javascript:void(0)" class="btn_control_box close_trigger">확인</a>
-								</div>
-								<!-- <button class="btn_survey_close"></button> -->
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="swiper_pagination_layer">
-					<div class="swiper_pagination_cols">
-						<div class="swiper-pagination">
 
-						</div>
-					</div>
-					<div class="swiper_fraction_cols">
-						<span class="swiper_fraction_para">
-							<span class="swiper_fraction_current">1</span>
-							<span class="swiper_fraction_part">/</span>
-							<span class="swiper_fraction_length">4</span>
-						</span>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<script>
-			document.addEventListener("DOMContentLoaded", () => {
-				surveyLayerFunc();
-			});
-
-
-
-			function surveyLayerFunc() {
-				const htmlElement = document.documentElement;
-				const bodyElement = document.body;
-				const survey_document_wrap = document.querySelector(".survey_document_wrap");
-				const survey_swiper_container = document.querySelector(".swiper-container.survey");
-				const survey_swiper_slide = survey_swiper_container.querySelectorAll(".swiper-slide");
-				const swiper_fraction_current = survey_document_wrap.querySelector(".swiper_fraction_current");
-				const swiper_fraction_length = survey_document_wrap.querySelector(".swiper_fraction_length");
-				const survey_swiper_slide_length = survey_swiper_slide.length;
-				const swiper_pagination_layer = document.querySelector(".swiper_pagination_layer");
-				const btn_survey_close = document.querySelector(".btn_survey_close");
-				const close_trigger = document.querySelectorAll(".survey_swiper_zone .close_trigger");
-				if (!!survey_swiper_container) {
-
-					swiper_fraction_length.textContent = survey_swiper_slide_length - 2;
-					htmlElement.classList.add("touchDis");
-					let survey_swiper = new Swiper(".swiper-container.survey", {
-						on: {
-							init() {
-								console.log('init');
-								//controlFunc();
-							}
-						},
-						pagination: {
-							el: ".swiper_pagination_layer .swiper-pagination",
-						},
-						autoHeight: true
-					});
-					survey_swiper.on("slideChange", () => {
-						console.log('slideChange');
-						controlFunc();
-					});
-
-					propsButton();
-					if (!!close_trigger) {
-						close_trigger.forEach((item) => {
-							item.addEventListener("click", () => {
-								survey_document_wrap.style.display = "none";
-								htmlElement.classList.remove("touchDis");
-							});
-						});
-					}
-
-					function controlFunc() {
-						/* console.log(survey_swiper.realIndex); */
-						if (survey_swiper.realIndex >= 1 && survey_swiper.realIndex < survey_swiper_slide_length - 1) {
-							swiper_pagination_layer.classList.add("active");
-							swiper_fraction_current.textContent = survey_swiper.realIndex;
-						} else {
-							swiper_pagination_layer.classList.remove("active");
-						}
-
-						/* if(survey_swiper.realIndex == survey_swiper_slide_length - 1){
-						    setTimeout(()=>{
-						        survey_document_wrap.style.display = "none";
-						        htmlElement.classList.remove("touchDis");
-						    },1500);
-						} */
-					}
-
-					function propsButton() {
-						const props_button = document.querySelectorAll(".props_button");
-						if (!!props_button) {
-							props_button.forEach((item) => {
-								item.addEventListener("click", (e) => {
-									const thisEvent = e.currentTarget;
-									const thisEventParent = thisEvent.closest(".props_item_list");
-									const notEvent = thisEvent.closest(".survey_form_list").querySelectorAll(".props_button");
-									if (!!notEvent && !thisEventParent) {
-										notEvent.forEach((item) => {
-											if (thisEvent !== item) {
-												item.classList.remove("active");
-											}
-										});
-									}
-									thisEvent.classList.toggle("active");
-								});
-							});
-						}
-					}
-				}
-			}
-		</script>
-		<!-- // survey -->
 	</div>
 </body>
 

@@ -23,11 +23,11 @@
 				<hgroup class="header_inner_wrap">
 					<h1 class="header_toplogo"><a href="#" class="header_toplogo_link"><span class="hdtext">PREMIER BLUE</span></a></h1>
 					<div class="header_util_list_wrap">
+						<p class="header_util_men">김블루님</p>
 						<ul class="header_util_list">
-							<li><a href="#" class="header_util member_layer_call">Premier Blue Members 일반 <strong>이정재 고객님(nh12345678)</strong></a></li>
+							<li><a href="#" class="header_util">고객정보</a></li>
 							<li><a href="#" class="header_util">로그아웃</a></li>
 						</ul>
-						<a href="#" class="header_util_ico member_layer_call"></a>
 					</div>
 				</hgroup>
 			</div>
@@ -38,10 +38,10 @@
 							<a href="#" class="gnb_one_item"><span class="gnb_one_text">서비스 안내</span></a>
 						</li>
 						<li name="gnb_gift">
-							<a href="#" class="gnb_one_item"><span class="gnb_one_text">기프트 신청</span></a>
+							<a href="#" class="gnb_one_item"><span class="gnb_one_text">프리미엄 기프트</span></a>
 						</li>
 						<li name="gnb_app">
-							<a href="#" class="gnb_one_item"><span class="gnb_one_text">기프트 신청내역</span></a>
+							<a href="#" class="gnb_one_item"><span class="gnb_one_text">기프트 신청 및 조회</span></a>
 						</li>
 						<li name="gnb_customer">
 							<a href="#" class="gnb_one_item"><span class="gnb_one_text">공지사항</span></a>
@@ -56,10 +56,10 @@
 				<div class="mobile_panel_dim"></div>
 				<div class="mobile_panel_wrap">
 					<div class="mbutil_row">
-						<a href="#" class="header_util_ico member_layer_call"></a>
+						<p class="mbutil_men">김블루님</p>
 						<ul class="mbutil_hlist">
+							<li><a href="#" class="mbutil">고객정보</a></li>
 							<li><a href="#" class="mbutil">로그아웃</a></li>
-							<li><a href="#" class="mbutil member_layer_call">Premier Blue Members 일반 <strong>이정재 고객님(nh12345678)</strong></a></li>
 						</ul>
 					</div>
 					<div class="mbmenu_row">
@@ -69,10 +69,10 @@
 									<a href="#" class="mbmenu_one">서비스 안내</a>
 								</li>
 								<li name="gnb_app">
-									<a href="#" class="mbmenu_one">기프트 신청</a>
+									<a href="#" class="mbmenu_one">프리미엄 기프트</a>
 								</li>
 								<li name="gnb_history">
-									<a href="#" class="mbmenu_one">기프트 신청내역</a>
+									<a href="#" class="mbmenu_one">기프트 신청 및 조회</a>
 								</li>
 								<li name="gnb_customer">
 									<a href="#" class="mbmenu_one">공지사항</a>
@@ -131,6 +131,23 @@
 				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
 			</div>
 		</div>
+		<div class="popup_wrap" id="pwModifyPopup">
+			<div class="bg_dim"></div>
+			<div class="popup_item size_2">
+				<div class="popup_title_row">
+					<h3 class="popup_title">비밀번호변경</h3>
+				</div>
+				<div class="popup_contents_row">
+					내용이 들어갑니다.
+					<div class="btn_bottom_wrap">
+						<!-- close_trigger 있을시 닫기 -->
+						<a href="#" class="btn_submit_box primary close_trigger"><span class="btn_submit_box_text">확인</span></a>
+						<a href="#" class="btn_submit_box close_trigger"><span class="btn_submit_box_text">취소</span></a>
+					</div>
+				</div>
+				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
 		<!-- // popup -->
 
 		<script>
@@ -146,13 +163,43 @@
 					},
 					closeCallback() {}
 				});
+				// 인스턴스 선언
+				let pwModifyPopup = new DesignPopup({
+					selector: "#pwModifyPopup",
+					beforeCallback() {
+
+					},
+					callback() {
+
+					},
+					closeCallback() {}
+				});
 
 				// 퍼블 확인용
 				let url = window.location.href.split('?')[1];
 				let url_2 = url !== undefined ? url.split('#')[0] : null;
 
-				if (url_2 === "member_popup") {
+				if (url_2 === "member") {
 					memberPopup.popupShow(); // show
+				}
+				if (url_2 === "pw") {
+					memberPopup.popupShow(); // show
+					pwModifyPopup.popupShow(); // show
+				}
+				if (url_2 === "pw_modal") {
+					memberPopup.popupShow(); // show
+					pwModifyPopup.popupShow(); // show
+					designModal({
+						message: "비밀번호가 변경되었습니다.",
+						modaltype: 'alert',
+						btnDisplay: false,
+						okcallback() {
+							console.log('okcallback');
+						},
+						cancelcallback() {
+							console.log('cancelcallback');
+						}
+					});
 				}
 
 				let member_layer_call = document.querySelectorAll(".member_layer_call");
@@ -167,133 +214,105 @@
 			});
 		</script>
 
-		<section class="middle_section">
-			<div class="middle_sub_contents">
-				<div class="middle_sub_title_wrap">
-					<h2 class="middle_sub_title">기프트 신청</h2>
-					<ul class="middle_sub_map_list">
-						<li><a href="#" class="middle_sub_map">홈</a></li>
-						<li><a href="#" class="middle_sub_map">기프트 신청</a></li>
-					</ul>
-				</div>
-				<div class="sv_wrap skin2">
-					<div class="sv_inner">
-						<div class="sv_logo"><img src="./assets/images/sv_logo.png" alt=""></div>
-						<div class="sv_copy">
-							<strong>Premier Blue Members</strong><br>
-							고객님께 감사의 마음을 담아 프리미엄 기프트로 정성껏 준비하였습니다.
-						</div>
+		<div class="middle_section_container">
+			<div class="bg_sv_middle type2"></div>
+			<section class="middle_section">
+				<div class="middle_top_row">
+					<h3 class="middle_top_title"><span class="top_title_intext">프리미엄 기프트</span></h3>
+					<div class="middle_top_copy_wrap">
+						<p class="mtop_copy_main"><strong>Premier Blue Members</strong></p>
+						<p class="mtop_copy_sub">고객님께 감사의 마음을 담아 프리미엄 기프트를 정성껏 준비했습니다.</p>
 					</div>
+				</div>
+				<div class="middle_contents_row">
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.
 				</div>
 
-				<div class="sc_wrap">
-					<div class="gallery_item_list_wrap">
-						<ul class="gallery_item_list">
-							<li>
-								<a href="#" class="gallery_item">
-									<div class="gallery_thum">
-										<img src="./assets/images/temp_283x219.jpg" class="gallery_thum_bg" alt="">
-										<div class="gallery_thum_layer">
-											<span class="btn_gallery_link">자세히 보기</span>
-										</div>
-									</div>
-									<div class="gallery_spec">
-										<div class="gallery_spec_para">[현대백화점] 명품 한우세트 ‘암소NO.09’ & 발뮤다 플레이트 프로</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="gallery_item">
-									<div class="gallery_thum">
-										<img src="./assets/images/temp_283x219_2.jpg" class="gallery_thum_bg" alt="">
-										<div class="gallery_thum_layer">
-											<span class="btn_gallery_link">자세히 보기</span>
-										</div>
-									</div>
-									<div class="gallery_spec">
-										<div class="gallery_spec_para">서울 신라호텔 더 파크뷰 식사권</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="gallery_item">
-									<div class="gallery_thum">
-										<img src="./assets/images/temp_283x219_3.jpg" class="gallery_thum_bg" alt="">
-										<div class="gallery_thum_layer">
-											<span class="btn_gallery_link">자세히 보기</span>
-										</div>
-									</div>
-									<div class="gallery_spec">
-										<div class="gallery_spec_para">에르메스 체인지 트레이 2개</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="gallery_item">
-									<div class="gallery_thum">
-										<img src="./assets/images/temp_283x219.jpg" class="gallery_thum_bg" alt="">
-										<div class="gallery_thum_layer">
-											<span class="btn_gallery_link">자세히 보기</span>
-										</div>
-									</div>
-									<div class="gallery_spec">
-										<div class="gallery_spec_para">[현대백화점] 명품 한우세트 ‘암소NO.09’ & 발뮤다 플레이트 프로</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="gallery_item">
-									<div class="gallery_thum">
-										<img src="./assets/images/temp_283x219_2.jpg" class="gallery_thum_bg" alt="">
-										<div class="gallery_thum_layer">
-											<span class="btn_gallery_link">자세히 보기</span>
-										</div>
-									</div>
-									<div class="gallery_spec">
-										<div class="gallery_spec_para">서울 신라호텔 더 파크뷰 식사권</div>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="gallery_item">
-									<div class="gallery_thum">
-										<img src="./assets/images/temp_283x219_3.jpg" class="gallery_thum_bg" alt="">
-										<div class="gallery_thum_layer">
-											<span class="btn_gallery_link">자세히 보기</span>
-										</div>
-									</div>
-									<div class="gallery_spec">
-										<div class="gallery_spec_para">에르메스 체인지 트레이 2개</div>
-									</div>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
+			</section>
+		</div>
 		<script>
 			menuRock("[name='gnb_gift']");
 		</script>
 		<footer class="footer_section">
 			<div class="footer_inner_wrap">
 				<div class="footer_item_wrap">
-					<div class="footer_item has_com">
+					<div class="footer_item">
 						<div class="footer_menu_list_wrap">
 							<ul class="footer_menu_list">
 								<li><a href="#" class="footer_menu">개인정보처리방침</a></li>
 								<li><a href="#" class="footer_menu">이용약관</a></li>
 							</ul>
 						</div>
-						<p class="footer_copy">COPYRIGHT(C) NH INVESTMENT & SECURITIES CO.,LTD.ALL RIGHTS RESERVED.</p>
-					</div>
-					<div class="footer_item has_cus">
-						<div class="footer_else_key">VIP멤버십 고객센터</div>
-						<div class="footer_else_value">
-							<ul class="footer_guide_list">
-								<li>TEL<br>02-517-7813</li>
-								<li class="long">평일 09:00 ~ 18:00 <br>주말 및 공휴일 휴무</li>
-							</ul>
+						<div class="footer_copy_wrap">
+							<p class="footer_copy emp">Premier Blue Members 컨시어지센터 02-517-7813</p>
+							<p class="footer_copy">운영시간 | 09:00-18:00 (주말 및 공휴일 제외) E-Mail | premierblue-vip@gmail.com</p>
 						</div>
 					</div>
 				</div>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+ @@include('./include/head.html')
+<body class="front_body">
+	<div class="page_wrap">
+        @@include('./include/header.html')
+		<div class="middle_section_container">
+			<div class="bg_sv_middle type2"></div>
+			<section class="middle_section">
+				<div class="middle_contents_row">
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.
+				</div>
+			</section>
+		</div>
+		<!-- popup -->
+		<div class="popup_wrap" id="appPopup">
+			<div class="bg_dim"></div>
+			<div class="popup_item">
+				<div class="popup_title_row">
+					<h3 class="popup_title">신청하기</h3>
+				</div>
+				<div class="popup_contents_row">
+					내용<br>
+					내용<br>
+					내용<br>
+					내용<br>
+					내용<br>
+					내용
+					<div class="btn_bottom_wrap">
+						<!-- close_trigger 있을시 닫기 -->
+						<a href="#" class="btn_submit_box primary"><span class="btn_submit_box_text">신청하기</span></a>
+						<a href="#" class="btn_submit_box close_trigger"><span class="btn_submit_box_text">취소</span></a>
+					</div>
+				</div>
+				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
+		<div class="popup_wrap" id="deliverPopup">
+			<div class="bg_dim"></div>
+			<div class="popup_item">
+				<div class="popup_title_row">
+					<h3 class="popup_title">배송정보</h3>
+				</div>
+				<div class="popup_contents_row">
+					내용<br>
+					내용<br>
+					내용<br>
+					내용<br>
+					내용<br>
+					내용
+					<div class="btn_bottom_wrap">
+						<!-- close_trigger 있을시 닫기 -->
+						<a href="#" class="btn_submit_box primary"><span class="btn_submit_box_text">확인</span></a>
+					</div>
+				</div>
+				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
+		<!-- // popup -->
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				// 인스턴스 선언
+				let appPopup = new DesignPopup({
+					selector: "#appPopup",
+					beforeCallback() {
+
+					},
+					callback() {
+
+					},
+					closeCallback() {}
+				});
+				let deliverPopup = new DesignPopup({
+					selector: "#deliverPopup",
+					beforeCallback() {
+
+					},
+					callback() {
+
+					},
+					closeCallback() {}
+				});
+
+				 // 퍼블 확인용
+                let url = window.location.href.split('?')[1];
+                let url_2 = url !== undefined ? url.split('#')[0] : null;
+				if (url_2 === "app") {
+					appPopup.popupShow();
+				}
+				if (url_2 === "app_confirm") {
+					appPopup.popupShow();
+					designModal({
+						message : "기프트를 신청 하시겠습니까?",
+						modaltype : 'confirm',
+						okcallback(){
+							console.log('okcallback');
+						},
+						cancelcallback(){
+							console.log('cancelcallback');
+						}
+					});
+				}
+				if (url_2 === "deliver") {
+					deliverPopup.popupShow();
+				}
+			});
+
+			menuRock("[name='gnb_gift']");
+		</script>
+		@@include('./include/footer.html')
+	</div>
+</body>
+
+</html>

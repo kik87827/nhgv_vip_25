@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>NH투자증권 VIP</title>
+	<link href="./assets/css/reset.css" rel="stylesheet">
+	<link href="./assets/css/swiper.min.css" rel="stylesheet">
+	<link href="./assets/css/layout.css" rel="stylesheet">
+	<link href="./assets/css/contents.css" rel="stylesheet">
+	<script src="./assets/js/jquery-3.4.1.min.js"></script>
+	<script src="./assets/js/swiper.min.js"></script>
+	<script src="./assets/js/ui.js"></script>
+</head>
+
+<body class="front_body">
+	<div class="page_wrap">
+		<header class="header_section">
+			<div class="header_main_wrap">
+				<hgroup class="header_inner_wrap">
+					<h1 class="header_toplogo"><a href="#" class="header_toplogo_link"><span class="hdtext">PREMIER BLUE</span></a></h1>
+					<div class="header_util_list_wrap">
+						<p class="header_util_men">김블루님</p>
+						<ul class="header_util_list">
+							<li><a href="#" class="header_util">고객정보</a></li>
+							<li><a href="#" class="header_util">로그아웃</a></li>
+						</ul>
+					</div>
+				</hgroup>
+			</div>
+			<div class="header_gnb_wrap">
+				<nav class="header_gnb_list_wrap">
+					<ul class="header_gnb_list">
+						<li name="gnb_info">
+							<a href="#" class="gnb_one_item"><span class="gnb_one_text">서비스 안내</span></a>
+						</li>
+						<li name="gnb_gift">
+							<a href="#" class="gnb_one_item"><span class="gnb_one_text">프리미엄 기프트</span></a>
+						</li>
+						<li name="gnb_app">
+							<a href="#" class="gnb_one_item"><span class="gnb_one_text">기프트 신청 및 조회</span></a>
+						</li>
+						<li name="gnb_customer">
+							<a href="#" class="gnb_one_item"><span class="gnb_one_text">공지사항</span></a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			<a href="javascript:;" class="btn_panel_menu"><i class="btn_panel_menu_ico"></i><span class="hdtext">메인메뉴 열기</span></a>
+			<!-- mobile -->
+			<div class="mobile_panel_zone" id="mobile_gnb">
+				<div class="mobile_panel_dim"></div>
+				<div class="mobile_panel_wrap">
+					<div class="mbutil_row">
+						<p class="mbutil_men">김블루님</p>
+						<ul class="mbutil_hlist">
+							<li><a href="#" class="mbutil">고객정보</a></li>
+							<li><a href="#" class="mbutil">로그아웃</a></li>
+						</ul>
+					</div>
+					<div class="mbmenu_row">
+						<div class="mbmenu_inwrap">
+							<ul class="mbmenu_vlist">
+								<li name="gnb_info">
+									<a href="#" class="mbmenu_one">서비스 안내</a>
+								</li>
+								<li name="gnb_app">
+									<a href="#" class="mbmenu_one">프리미엄 기프트</a>
+								</li>
+								<li name="gnb_history">
+									<a href="#" class="mbmenu_one">기프트 신청 및 조회</a>
+								</li>
+								<li name="gnb_customer">
+									<a href="#" class="mbmenu_one">공지사항</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<a href="#" class="btn_mbmenuclose"><span class="hdtext">메인메뉴 닫기</span></a>
+				</div>
+			</div>
+			<!-- // mobile -->
+		</header>
+
+		<!-- popup -->
+		<div class="popup_wrap" id="memberPopup">
+			<div class="bg_dim"></div>
+			<div class="popup_item">
+				<div class="popup_title_row">
+					<h3 class="popup_title">고객정보</h3>
+				</div>
+				<div class="popup_contents_row">
+					<div class="data_intro_copy_wrap">
+						<p class="data_intro_copy">고객 정보 수정이 필요한 경우 <br>VIP 멤버십 고객센터 02.517.7813로 연락주시기 바랍니다.</p>
+					</div>
+					<div class="data_table_wrap">
+						<table class="data_table">
+							<tbody>
+								<tr>
+									<th scope="col"><span class="data_thtext">이름</span></th>
+									<td><span class="data_tdtext">이정재(nh123456789)</span></td>
+								</tr>
+								<tr>
+									<th scope="col"><span class="data_thtext">연락처</span></th>
+									<td><span class="data_tdtext">010-1234-5678</span></td>
+								</tr>
+								<tr>
+									<th scope="col"><span class="data_thtext">지점</span></th>
+									<td><span class="data_tdtext">서울 강남 지점</span></td>
+								</tr>
+								<tr>
+									<th scope="col"><span class="data_thtext">담당PB</span></th>
+									<td><span class="data_tdtext">정우성</span></td>
+								</tr>
+								<tr>
+									<th scope="col"><span class="data_thtext">PB연락처</span></th>
+									<td><span class="data_tdtext">010-9876-5432</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="btn_bottom_wrap">
+						<!-- close_trigger 있을시 닫기 -->
+						<a href="#" class="btn_submit_box primary close_trigger"><span class="btn_submit_box_text">확인</span></a>
+					</div>
+				</div>
+				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
+		<div class="popup_wrap" id="pwModifyPopup">
+			<div class="bg_dim"></div>
+			<div class="popup_item size_2">
+				<div class="popup_title_row">
+					<h3 class="popup_title">비밀번호변경</h3>
+				</div>
+				<div class="popup_contents_row">
+					내용이 들어갑니다.
+					<div class="btn_bottom_wrap">
+						<!-- close_trigger 있을시 닫기 -->
+						<a href="#" class="btn_submit_box primary close_trigger"><span class="btn_submit_box_text">확인</span></a>
+						<a href="#" class="btn_submit_box close_trigger"><span class="btn_submit_box_text">취소</span></a>
+					</div>
+				</div>
+				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
+		<!-- // popup -->
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				// 인스턴스 선언
+				let memberPopup = new DesignPopup({
+					selector: "#memberPopup",
+					beforeCallback() {
+
+					},
+					callback() {
+
+					},
+					closeCallback() {}
+				});
+				// 인스턴스 선언
+				let pwModifyPopup = new DesignPopup({
+					selector: "#pwModifyPopup",
+					beforeCallback() {
+
+					},
+					callback() {
+
+					},
+					closeCallback() {}
+				});
+
+				// 퍼블 확인용
+				let url = window.location.href.split('?')[1];
+				let url_2 = url !== undefined ? url.split('#')[0] : null;
+
+				if (url_2 === "member") {
+					memberPopup.popupShow(); // show
+				}
+				if (url_2 === "pw") {
+					memberPopup.popupShow(); // show
+					pwModifyPopup.popupShow(); // show
+				}
+				if (url_2 === "pw_modal") {
+					memberPopup.popupShow(); // show
+					pwModifyPopup.popupShow(); // show
+					designModal({
+						message: "비밀번호가 변경되었습니다.",
+						modaltype: 'alert',
+						btnDisplay: false,
+						okcallback() {
+							console.log('okcallback');
+						},
+						cancelcallback() {
+							console.log('cancelcallback');
+						}
+					});
+				}
+
+				let member_layer_call = document.querySelectorAll(".member_layer_call");
+				if (!!member_layer_call) {
+					member_layer_call.forEach((item) => {
+						item.addEventListener("click", (e) => {
+							e.preventDefault();
+							memberPopup.popupShow(); // show
+						});
+					});
+				}
+			});
+		</script>
+
+		<div class="middle_section_container">
+			<div class="bg_sv_middle type2"></div>
+			<section class="middle_section">
+				<div class="middle_top_row">
+					<h3 class="middle_top_title"><span class="top_title_intext">기프트 신청 및 조회</span></h3>
+					<div class="middle_top_copy_wrap">
+						<p class="mtop_copy_main"><strong>자세한 문의는 담당 PB 또는 Premier Blue Members 컨시어지센터<br>(02.517.7813)</strong>으로 문의하시기 바랍니다.</p>
+					</div>
+				</div>
+				<div class="middle_contents_row">
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.
+				</div>
+
+			</section>
+		</div>
+		<!-- popup -->
+		<div class="popup_wrap" id="appPopup">
+			<div class="bg_dim"></div>
+			<div class="popup_item">
+				<div class="popup_title_row">
+					<h3 class="popup_title">신청하기</h3>
+				</div>
+				<div class="popup_contents_row">
+					내용<br>
+					내용<br>
+					내용<br>
+					내용<br>
+					내용<br>
+					내용
+					<div class="btn_bottom_wrap">
+						<!-- close_trigger 있을시 닫기 -->
+						<a href="#" class="btn_submit_box primary"><span class="btn_submit_box_text">신청하기</span></a>
+						<a href="#" class="btn_submit_box close_trigger"><span class="btn_submit_box_text">취소</span></a>
+					</div>
+				</div>
+				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
+		<div class="popup_wrap" id="deliverPopup">
+			<div class="bg_dim"></div>
+			<div class="popup_item">
+				<div class="popup_title_row">
+					<h3 class="popup_title">배송정보</h3>
+				</div>
+				<div class="popup_contents_row">
+					내용<br>
+					내용<br>
+					내용<br>
+					내용<br>
+					내용<br>
+					내용
+					<div class="btn_bottom_wrap">
+						<!-- close_trigger 있을시 닫기 -->
+						<a href="#" class="btn_submit_box primary"><span class="btn_submit_box_text">확인</span></a>
+					</div>
+				</div>
+				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+			</div>
+		</div>
+		<!-- // popup -->
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				// 인스턴스 선언
+				let appPopup = new DesignPopup({
+					selector: "#appPopup",
+					beforeCallback() {
+
+					},
+					callback() {
+
+					},
+					closeCallback() {}
+				});
+				let deliverPopup = new DesignPopup({
+					selector: "#deliverPopup",
+					beforeCallback() {
+
+					},
+					callback() {
+
+					},
+					closeCallback() {}
+				});
+
+				// 퍼블 확인용
+				let url = window.location.href.split('?')[1];
+				let url_2 = url !== undefined ? url.split('#')[0] : null;
+				if (url_2 === "app") {
+					appPopup.popupShow();
+				}
+				if (url_2 === "app_confirm") {
+					appPopup.popupShow();
+					designModal({
+						message: "기프트를 신청 하시겠습니까?",
+						modaltype: 'confirm',
+						okcallback() {
+							console.log('okcallback');
+						},
+						cancelcallback() {
+							console.log('cancelcallback');
+						}
+					});
+				}
+				if (url_2 === "deliver") {
+					deliverPopup.popupShow();
+				}
+			});
+
+			menuRock("[name='gnb_app']");
+		</script>
+		<footer class="footer_section">
+			<div class="footer_inner_wrap">
+				<div class="footer_item_wrap">
+					<div class="footer_item">
+						<div class="footer_menu_list_wrap">
+							<ul class="footer_menu_list">
+								<li><a href="#" class="footer_menu">개인정보처리방침</a></li>
+								<li><a href="#" class="footer_menu">이용약관</a></li>
+							</ul>
+						</div>
+						<div class="footer_copy_wrap">
+							<p class="footer_copy emp">Premier Blue Members 컨시어지센터 02-517-7813</p>
+							<p class="footer_copy">운영시간 | 09:00-18:00 (주말 및 공휴일 제외) E-Mail | premierblue-vip@gmail.com</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>
