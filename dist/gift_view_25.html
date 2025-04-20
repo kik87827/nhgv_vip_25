@@ -95,29 +95,38 @@
 				</div>
 				<div class="popup_contents_row">
 					<div class="data_intro_copy_wrap">
-						<p class="data_intro_copy">고객 정보 수정이 필요한 경우 <br>VIP 멤버십 고객센터 02.517.7813로 연락주시기 바랍니다.</p>
+						<p class="data_intro_copy">고객 정보 수정이 필요한 경우 Premier Blue Members <br>컨시어지센터 02.517.7813 로 연락주시기 바랍니다.</p>
 					</div>
 					<div class="data_table_wrap">
 						<table class="data_table">
 							<tbody>
 								<tr>
-									<th scope="col"><span class="data_thtext">이름</span></th>
-									<td><span class="data_tdtext">이정재(nh123456789)</span></td>
+									<th scope="col"><span class="data_thtext">고객명</span></th>
+									<td><span class="data_tdtext">김플러스</span></td>
 								</tr>
 								<tr>
-									<th scope="col"><span class="data_thtext">연락처</span></th>
+									<th scope="col"><span class="data_thtext">고객 전화번호</span></th>
 									<td><span class="data_tdtext">010-1234-5678</span></td>
 								</tr>
 								<tr>
-									<th scope="col"><span class="data_thtext">지점</span></th>
-									<td><span class="data_tdtext">서울 강남 지점</span></td>
+									<th scope="col"><span class="data_thtext">비밀번호</span></th>
+									<td class="type2">
+										<div class="grid_td_wrap">
+											<div class="grid_td_cell"><span class="data_tdtext">**********</span></div>
+											<div class="grid_td_cell"><a href="javascript:;" class="btn_smbox" id="btn_pw_modify">비밀번호변경</a></div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="col"><span class="data_thtext">센터명</span></th>
+									<td><span class="data_tdtext">어질리티코리아1</span></td>
 								</tr>
 								<tr>
 									<th scope="col"><span class="data_thtext">담당PB</span></th>
-									<td><span class="data_tdtext">정우성</span></td>
+									<td><span class="data_tdtext">어질리티1</span></td>
 								</tr>
 								<tr>
-									<th scope="col"><span class="data_thtext">PB연락처</span></th>
+									<th scope="col"><span class="data_thtext">PB 전화번호</span></th>
 									<td><span class="data_tdtext">010-9876-5432</span></td>
 								</tr>
 							</tbody>
@@ -138,11 +147,15 @@
 					<h3 class="popup_title">비밀번호변경</h3>
 				</div>
 				<div class="popup_contents_row">
-					내용이 들어갑니다.
+					<div class="form_block_wrap type2">
+						<div class="form_block_row"><input type="password" class="form_input size_2" placeholder="현재 비밀번호" /></div>
+						<div class="form_block_row"><input type="password" class="form_input size_2" placeholder="새 비밀번호" /></div>
+						<div class="form_block_row"><input type="password" class="form_input size_2" placeholder="새 비밀번호 확인" /></div>
+					</div>
 					<div class="btn_bottom_wrap">
 						<!-- close_trigger 있을시 닫기 -->
-						<a href="#" class="btn_submit_box primary close_trigger"><span class="btn_submit_box_text">확인</span></a>
-						<a href="#" class="btn_submit_box close_trigger"><span class="btn_submit_box_text">취소</span></a>
+						<a href="#" class="btn_submit_box primary size_2 close_trigger"><span class="btn_submit_box_text">확인</span></a>
+						<a href="#" class="btn_submit_box size_2 close_trigger"><span class="btn_submit_box_text">취소</span></a>
 					</div>
 				</div>
 				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
@@ -211,81 +224,97 @@
 						});
 					});
 				}
+
+				document.querySelector("#btn_pw_modify").addEventListener("click", (e) => {
+					e.preventDefault();
+					pwModifyPopup.popupShow(); // show
+				});
 			});
 		</script>
 
-		<div class="middle_section_container">
+		<div class="middle_section_container type2">
 			<div class="bg_sv_middle type2"></div>
 			<section class="middle_section">
 				<div class="middle_contents_row">
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.<br>
-					내용이 들어갑니다.
+					<div class="view_container">
+						<div class="view_img_cell">
+							<div class="view_img_wrap"><img src="./assets/images/view_img_25.jpg" alt=""></div>
+							<ul class="view_option_list">
+								<li><select class="combo_select">
+										<option>옵션1</option>
+										<option>01</option>
+										<option>02</option>
+										<option>03</option>
+										<option>04</option>
+									</select></li>
+								<li><select class="combo_select">
+										<option>옵션2</option>
+										<option>01</option>
+										<option>02</option>
+										<option>03</option>
+										<option>04</option>
+									</select></li>
+							</ul>
+							<div class="btn_submit_quad_wrap"><a href="javascript:;" id="btn_submit_quad" class="btn_submit_quad"><span class="submit_quad_text">신청하기</span></a></div>
+						</div>
+						<div class="view_spec_cell">
+							<div class="view_spec_caption_row">
+								<p class="view_spec_caption">NH투자증권 Premier Blue Members</p>
+							</div>
+							<div class="view_spec_main_row">
+								<div class="view_flag_wrap"><span class="flag">골프 | 골프용품</span></div>
+								<h2 class="view_spec_title">[프리미엄 골프클럽] 테일러메이드 QI 아이언 남성 세트</h2>
+							</div>
+							<div class="view_spec_sub_row">
+								<ul class="spec_block_list">
+									<li>
+										<div class="spec_bar_row">
+											<p class="spec_bar_title">상품구성</p>
+										</div>
+										<div class="spec_contents_row">
+											<ul class="indent_bullet_list">
+												<li>
+													<span class="indent_bullet">-</span>
+													<div class="indent_liquid">
+														2025 테일러메이드 QI 아이언 남성 8개 아이언세트<br>(5~P, A, W)
+													</div>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<div class="spec_bar_row">
+											<p class="spec_bar_title">제외일자</p>
+										</div>
+										<div class="spec_contents_row">
+											<ul class="indent_bullet_list">
+												<li>
+													<div class="indent_liquid">
+														25년 00/00~00, 00/00
+													</div>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<div class="spec_bar_row">
+											<p class="spec_bar_title">이용안내</p>
+										</div>
+										<div class="spec_contents_row">
+											<ul class="indent_bullet_list">
+												<li>
+													<span class="indent_bullet">*</span>
+													<div class="indent_liquid">
+														커스텀 제작 상품으로 상품 취소 및 변경이 불가합니다.
+													</div>
+												</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</div>
@@ -297,12 +326,186 @@
 					<h3 class="popup_title">신청하기</h3>
 				</div>
 				<div class="popup_contents_row">
-					내용<br>
-					내용<br>
-					내용<br>
-					내용<br>
-					내용<br>
-					내용
+					<div class="info_liquid_block_wrap">
+						<div class="info_liquid_block">
+							<div class="info_liquid_title">상품선택</div>
+							<div class="info_liquid_contents">
+								<div class="props_block_wrap">
+									<ul class="props_block_list">
+										<li>
+											<div class="props_item">
+												<input type="checkbox" class="props_form_orgin" id="product_choice_01" checked>
+												<label for="product_choice_01" class="props_form_label">상품1</label>
+											</div>
+											<div class="props_two_wrap">
+												<ul class="props_two_list">
+													<li>
+														<div class="props_item">
+															<input type="checkbox" class="props_form_orgin" id="product_choice_01_01" checked>
+															<label for="product_choice_01_01" class="props_form_label">옵션1-1</label>
+														</div>
+													</li>
+													<li>
+														<div class="props_item">
+															<input type="checkbox" class="props_form_orgin" id="product_choice_01_02" checked>
+															<label for="product_choice_01_02" class="props_form_label">옵션1-2</label>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="info_liquid_block">
+							<div class="info_liquid_title">신청자(고객)</div>
+							<div class="info_liquid_contents">
+								<div class="form_view_table_wrap">
+									<table class="form_view_table">
+										<tbody>
+											<tr>
+												<th scope="col"><span class="fv_key">고객명</span></th>
+												<td><span class="fv_value">김블루</span></td>
+											</tr>
+											<tr>
+												<th scope="col"><span class="fv_key">고객 전화번호</span></th>
+												<td><span class="fv_value number">010-1234-5678</span></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="form_add_else_wrap">
+									<div class="props_item type2">
+										<input type="checkbox" class="props_form_orgin" id="props_form_check">
+										<label for="props_form_check" class="props_form_label"><span class="props_form_label_text">신청자 본인이 받으실 경우</span></label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="info_liquid_block">
+							<div class="info_liquid_title">배송정보</div>
+							<div class="info_liquid_contents">
+								<div class="form_view_table_wrap">
+									<table class="form_view_table">
+										<tbody>
+											<!-- <tr>
+                                                <th scope="col"><span class="fv_key">받으시는 <br>분 선택</span></th>
+                                                <td>
+                                                    <ul class="props_item_list">
+                                                        <li>
+                                                            <div class="props_item">
+                                                                <input type="checkbox" class="props_form_orgin" id="props_form_01">
+                                                                <label for="props_form_01" class="props_form_label">신청자와 동일(이름, 연락처)</label> 
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr> -->
+											<tr>
+												<th scope="col"><span class="fv_key">받으시는 <br>분</span></th>
+												<td class="type2"><input type="text" class="form_sinput" data-pcwid="100px" style="width: 100px;"></td>
+											</tr>
+											<tr>
+												<th scope="col"><span class="fv_key">연락처</span></th>
+												<td class="type2">
+													<ul class="inform_item_list type3">
+														<li><input type="text" class="form_sinput"></li>
+														<li><input type="text" class="form_sinput"></li>
+														<li><input type="text" class="form_sinput"></li>
+													</ul>
+													<p class="indent_para_item mt10">
+														<span class="indent_bullet">※</span>
+														<span class="indent_liquid">연락처가 변경된 경우 새로운 연락처를 입력해주세요.</span>
+													</p>
+												</td>
+											</tr>
+											<tr>
+												<th scope="col"><span class="fv_key">주소</span></th>
+												<td class="type2">
+													<div class="td_inner_block">
+														<ul class="inform_item_list type2">
+															<li><input type="text" class="form_sinput" data-pcwid="100" style="width: 100px;" value="06673" disabled></li>
+															<li><button class="btn_inform_box">주소찾기</button></li>
+														</ul>
+													</div>
+													<div class="td_inner_block">
+														<input type="text" class="form_sinput" disabled value="서울특별시 서초구 서초대로 88 (방배동, 938-11)">
+													</div>
+													<div class="td_inner_block">
+														<input type="text" class="form_sinput" value="유니온빌딩 5층 어질리티코리아">
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="col"><span class="fv_key">배송시 <br>요청사항</span></th>
+												<td class="type2">
+													<textarea rows="10" cols="10" class="fv_ta"></textarea>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<ul class="clause_item_list">
+									<li>
+										<p class="indent_para_item">
+											<span class="indent_bullet">※</span>
+											<span class="indent_liquid">프리미엄기프트 신청, 취소시, 신청자, PB, 받으시는 분에게 안내문자가 발송됩니다.</span>
+										</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="terms_guide_wrap">
+						<div class="terms_guide_block">
+							<div class="terms_guide_title">서비스 이행을 위한 개인정보 재 위탁 동의 안내</div>
+							<div class="terms_guide_contents">
+								<ul class="terms_indent_list">
+									<li>
+										<div class="terms_indent_item">
+											<span class="terms_indent_bullet">-</span>
+											<span class="terms_indent_liquid">위탁 받는 업체: ㈜머스트브랜딩, 주식회사 기뜬정, ㈜드림필드 코리아, 안나스낵, 주식회사
+												이지마켓, 한화갤러리아㈜, 농업회사법인 주식회사 리틀에이커, 이음, ㈜세원정밀</span>
+										</div>
+									</li>
+									<li>
+										<div class="terms_indent_item">
+											<span class="terms_indent_bullet">-</span>
+											<span class="terms_indent_liquid">개인정보의 수집·이용 목적: 위탁서비스 제공에 관한 계약 이행(서비스 이용 시 본인확인, 물품배송,
+												분쟁조정을 위한 기록보존, 불만 및 민원처리, 고지사항 등)</span>
+										</div>
+									</li>
+									<li>
+										<div class="terms_indent_item">
+											<span class="terms_indent_bullet">-</span>
+											<span class="terms_indent_liquid">수집하려는 개인정보의 항목: 성명, 주소, 연락처</span>
+										</div>
+									</li>
+									<li>
+										<div class="terms_indent_item">
+											<span class="terms_indent_bullet">-</span>
+											<span class="terms_indent_liquid">개인정보의 보유 및 이용 기간: 배송 후 1년 내 파기</span>
+										</div>
+									</li>
+									<li>
+										<div class="terms_indent_item">
+											<span class="terms_indent_bullet">-</span>
+											<span class="terms_indent_liquid">고객님께서는 개인정보 수집 및 이용에 대한 동의를 거부할 권리가 있으며, 동의하지 않을 시 감사
+												서비스 중 감사 선물 배송 서비스를 받으실 수 없습니다.
+												단, 기본적으로 제공되는 서비스는 정상적으로 이용이 가능합니다.</span>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="terms_props_wrap">
+								<div class="props_item type3">
+									<input type="checkbox" class="props_form_orgin" id="terms_guide_01">
+									<label for="terms_guide_01" class="props_form_label">개인정보 재 위탁에 동의합니다.</label>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div class="btn_bottom_wrap">
 						<!-- close_trigger 있을시 닫기 -->
 						<a href="#" class="btn_submit_box primary"><span class="btn_submit_box_text">신청하기</span></a>
@@ -319,15 +522,98 @@
 					<h3 class="popup_title">배송정보</h3>
 				</div>
 				<div class="popup_contents_row">
-					내용<br>
-					내용<br>
-					내용<br>
-					내용<br>
-					내용<br>
-					내용
+					<div class="info_liquid_block_wrap">
+						<div class="info_liquid_block">
+							<div class="info_liquid_title">고객정보</div>
+							<div class="info_liquid_contents">
+								<div class="form_view_table_wrap">
+									<table class="form_view_table">
+										<tbody>
+											<tr>
+												<th scope="col"><span class="fv_key">고객명</span></th>
+												<td><span class="fv_value">이정재</span></td>
+											</tr>
+											<tr>
+												<th scope="col"><span class="fv_key">고객 전화번호</span></th>
+												<td><span class="fv_value number">010-1234-5678</span></td>
+											</tr>
+											<tr>
+												<th scope="col"><span class="fv_key">센터명</span></th>
+												<td><span class="fv_value">어질리티코리아1</span></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="info_liquid_block">
+							<div class="info_liquid_title">신청정보</div>
+							<div class="info_liquid_contents">
+								<div class="form_view_table_wrap">
+									<table class="form_view_table">
+										<tbody>
+											<tr>
+												<th scope="col"><span class="fv_key">고객 등급</span></th>
+												<td><span class="fv_value">Premier Blue</span></td>
+											</tr>
+											<tr>
+												<th scope="col"><span class="fv_key">신청일자</span></th>
+												<td><span class="fv_value number">2025.04.30 17:11:22</span></td>
+											</tr>
+											<tr>
+												<th scope="col"><span class="fv_key">상품명</span></th>
+												<td><span class="fv_value">[한우세트] 갤러리아백화점 강진맥우 한우 구독 서비스</span></td>
+											</tr>
+											<tr>
+												<th scope="col"><span class="fv_key">신청자</span></th>
+												<td><span class="fv_value">김블루(컨시어지 센터 신청)</span></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="info_liquid_block">
+							<div class="info_liquid_title">배송정보</div>
+							<div class="info_liquid_contents">
+								<div class="form_view_table_wrap">
+									<table class="form_view_table">
+										<tbody>
+											<tr>
+												<th scope="col"><span class="fv_key">받으시는분</span></th>
+												<td class="type2"><input type="text" class="form_sinput" data-pcwid="100" style="width:100px;" value="김플러스"></td>
+											</tr>
+											<tr>
+												<th scope="col"><span class="fv_key">전화번호</span></th>
+												<td class="type2">
+													<ul class="inform_item_list type3">
+														<li><input type="text" class="form_sinput" value="010"></li>
+														<li><input type="text" class="form_sinput" value="8765"></li>
+														<li><input type="text" class="form_sinput" value="4321"></li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<th scope="col"><span class="fv_key">주소</span></th>
+												<td><span class="fv_value">06673 서울특별시 서초구 서초대로 88 (방배동, 938-11) 유니온빌딩 5층 어질리티코리아</span></td>
+											</tr>
+											<tr>
+												<th scope="col"><span class="fv_key">배송시<br>요청사항</span></th>
+												<td><span class="fv_value">배송시 요청사항 내용</span></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p class="indent_para_item mt10">
+									<span class="indent_bullet">*</span>
+									<span class="indent_liquid">프리미엄 기프트 신청, 취소 시, 신청자, PB, 받으시는 분에게 안내문자가발송됩니다.</span>
+								</p>
+							</div>
+						</div>
+					</div>
 					<div class="btn_bottom_wrap">
 						<!-- close_trigger 있을시 닫기 -->
-						<a href="#" class="btn_submit_box primary"><span class="btn_submit_box_text">확인</span></a>
+						<a href="#" class="btn_submit_box primary close_trigger"><span class="btn_submit_box_text">확인</span></a>
 					</div>
 				</div>
 				<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
@@ -381,6 +667,11 @@
 				if (url_2 === "deliver") {
 					deliverPopup.popupShow();
 				}
+
+				document.querySelector("#btn_submit_quad").addEventListener("click", (e) => {
+					e.preventDefault();
+					appPopup.popupShow();
+				});
 			});
 
 			menuRock("[name='gnb_gift']");
